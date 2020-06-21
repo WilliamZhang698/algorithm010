@@ -1,1 +1,22 @@
-学习笔记
+# 解题思路
+- 1、clarification 说（阐）明；解释
+- 2、possible solutions -->optimal (time&space)
+- 3、code
+- 4、test cases
+
+# Hash Table
+
+- 哈希表（Hash table），也叫散列表，是根据关键码值（Key,value）而直接进行访问的数据结构。
+- 它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。
+- 这个映射函数叫作散列函数（Hash Function），存放记录的数组叫作哈希表（或散列表）。
+
+#### 散列表用的是数组支持按照下标随机访问数据的特性，所以散列表其实就是数组的一种扩展，由数组演化而来。可以说，如果没有数组，就没有散列表。
+
+- 散列冲突
+  - 概念：key1 != key2 ,hash(key1) 有可能等于 hash(key2);散列表是基于数组的，数组的存储空间是有限的，所以会加大散列冲突的概率。
+  - 解决方法：
+    - 1、开放寻址法
+    - 2、链表法
+
+#### 复杂度分析
+![alt text](https://github.com/WilliamZhang698/algorithm010/blob/master/Week02/Common%20Data%20Structure%20Operations.png "Common Data Structure Operations")
