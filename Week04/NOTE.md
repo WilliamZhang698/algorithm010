@@ -48,3 +48,38 @@
     }
 }
 ```
+
+
+# 二分查找
+
+## 使用二分查找，寻找一个半有序数组 [3，4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+
+### 思路 
+ - 按照例子来说，无序的位置是 7，0 只要找到 l > r的时候 并且 r的角标等于 l+1 即找到对应位置
+ - nums[l] < nums[mid] > nums[r] 向后规约
+ - nums[l] > nums[mid] < nums[r] 向前规约
+ 
+
+ ``` java 
+    public int search(int[] nums,int target) {
+        if (nums == null) return -1;
+        if (nums.length == 1) return nums[0];
+        int l = 0; 
+        int r = nums.length - 1;
+
+        while (l < r) {
+            int mid = l + (r - l >> 1);
+
+            if (nums[l] < nums[mid]) {
+                l = mid;
+            }
+            else if (nums[mid] < nums[r]) {
+                r = mid;
+            }
+            else if (nums[l] > nums[r] && r == l + 1) {
+                return r;
+            } 
+        }
+        return -1;
+    }
+ ```
